@@ -1,0 +1,36 @@
+package com.lance5057.extradelight;
+
+import java.util.function.Supplier;
+
+import com.lance5057.extradelight.items.components.ChillComponent;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
+
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraftforge.neoforge.fluids.SimpleFluidContent;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.registries.DeferredRegister;
+
+public class ExtraDelightComponents {
+	public static final DeferredRegister.DataComponents COMPONENTS = DeferredRegister
+			.createDataComponents(ExtraDelight.MOD_ID);
+
+	public static Supplier<DataComponentType<SimpleFluidContent>> FLUID = COMPONENTS.registerComponentType("fluid",
+			builder -> builder.persistent(SimpleFluidContent.CODEC)
+					.networkSynchronized(SimpleFluidContent.STREAM_CODEC));
+
+	public static final DeferredHolder<DataComponentType<?>, DataComponentType<ChillComponent>> CHILL = COMPONENTS
+			.registerComponentType("chill", builder -> builder.persistent(ChillComponent.CODEC)
+					// Note we use a unit stream codec here
+					.networkSynchronized(ChillComponent.UNIT_STREAM_CODEC));
+
+	public static final DeferredHolder<DataComponentType<?>, DataComponentType<ItemContainerContents>> ITEMSTACK_HANDLER = COMPONENTS
+			.register("itemstack_handler",
+					() -> DataComponentType.<ItemContainerContents>builder().persistent(ItemContainerContents.CODEC)
+							.networkSynchronized(ItemContainerContents.STREAM_CODEC).cacheEncoding().build());
+
+	public static final DeferredHolder<DataComponentType<?>, DataComponentType<DynamicItemComponent>> DYNAMIC_FOOD = COMPONENTS
+			.register("dynamic_food",
+					() -> DataComponentType.<DynamicItemComponent>builder().persistent(DynamicItemComponent.CODEC)
+							.networkSynchronized(DynamicItemComponent.STREAM_CODEC).cacheEncoding().build());
+}

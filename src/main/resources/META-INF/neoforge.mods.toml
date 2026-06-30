@@ -1,0 +1,30 @@
+modLoader="javafml" #mandatory
+loaderVersion="47" #mandatory
+license="CC BY-NC-SA 4.0 Deed "
+[[mods]] #mandatory
+modId="extradelight" #mandatory
+version="2.6.1" #mandatory
+displayName="Extra Delight" #mandatory
+authors="Lance5057, Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly, ParadigmOne, Robynster" #optional
+
+description='''A new more involved way to craft'''
+[[dependencies.extradelight]] #optional
+    modId="neoforge" #mandatory
+    type="required" #mandatory
+    versionRange="[21,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+	
+[[dependencies.extradelight]]
+    modId="minecraft"
+    type="required"
+    versionRange="1.21"
+    ordering="NONE"
+    side="BOTH"
+	
+[[dependencies.extradelight]]
+    modId="farmersdelight"
+    type="required"
+    versionRange="1.2.8"
+    ordering="AFTER"
+    side="BOTH"
