@@ -18,10 +18,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.bus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.EventBusSubscriber;
-import net.minecraftforge.neoforge.client.event.ComputeFovModifierEvent;
-import net.minecraftforge.neoforge.client.event.ViewportEvent;
-import net.minecraftforge.neoforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.neoforge.registries.DeferredItem;
+import net.minecraftforge.client.event.ComputeFovModifierEvent;
+import net.minecraftforge.client.event.ViewportEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.registries.RegistryObject;
 
 @EventBusSubscriber(modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightNeoForgeClientEvents {
@@ -46,6 +46,7 @@ public class ExtraDelightNeoForgeClientEvents {
 		}
 	}
 
+/*
 	@SubscribeEvent
 	public static void registerComponentToolTips(ItemTooltipEvent event) {
 		ItemStack stack = event.getItemStack();
@@ -58,7 +59,8 @@ public class ExtraDelightNeoForgeClientEvents {
 		if (tooltipProvider != null) {
 			tooltipProvider.addToTooltip(ctx, i -> {
 				tooltip.add(i);
-			}, flag);
+			}
+*/, flag);
 		}
 
 //		TooltipProvider tooltipProvider1 = stack.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
@@ -89,11 +91,11 @@ public class ExtraDelightNeoForgeClientEvents {
 			}
 	}
 
-	public static Set<DeferredItem<Item>> feasts = new HashSet<DeferredItem<Item>>();
+	public static Set<RegistryObject<Item>> feasts = new HashSet<RegistryObject<Item>>();
 
-	public static Set<DeferredItem<Item>> servings = new HashSet<DeferredItem<Item>>();
+	public static Set<RegistryObject<Item>> servings = new HashSet<RegistryObject<Item>>();
 
-	public static Set<DeferredItem<Item>> butchercraft = new HashSet<DeferredItem<Item>>();
+	public static Set<RegistryObject<Item>> butchercraft = new HashSet<RegistryObject<Item>>();
 
 	@SubscribeEvent
 	public static void puckerEffect(ComputeFovModifierEvent event) {

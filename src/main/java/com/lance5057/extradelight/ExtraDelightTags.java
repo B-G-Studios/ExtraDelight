@@ -13,15 +13,15 @@ import net.minecraft.world.level.material.Fluid;
 public class ExtraDelightTags {
 
 	public static TagKey<Item> neoforgeItemTag(String tag) {
-		return ItemTags.create(new ResourceLocation("c", tag));
+		return ItemTags.create(new ResourceLocation("forge", tag));
 	}
 
 	public static TagKey<Block> neoforgeBlockTag(String tag) {
-		return BlockTags.create(new ResourceLocation("c", tag));
+		return BlockTags.create(new ResourceLocation("forge", tag));
 	}
 
 	public static TagKey<Fluid> neoforgeFluidTag(String tag) {
-		return FluidTags.create(new ResourceLocation("c", tag));
+		return FluidTags.create(new ResourceLocation("forge", tag));
 	}
 
 	public static TagKey<Item> modTag(String tag) {

@@ -1,6 +1,5 @@
 package com.lance5057.extradelight.aesthetics.block;
 
-import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -30,8 +29,7 @@ public class RibbonBlock extends DirectionalBlock implements SimpleWaterloggedBl
 	protected static final VoxelShape SHAPE_W = Block.box(12.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	protected static final VoxelShape SHAPE_S = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 4.0D);
 	
-	public static final MapCodec<RibbonBlock> CODEC = simpleCodec(RibbonBlock::new);
-
+	
 	public RibbonBlock(BlockBehaviour.Properties properties) {
 		super(properties);
 		this.registerDefaultState(
@@ -82,9 +80,4 @@ public class RibbonBlock extends DirectionalBlock implements SimpleWaterloggedBl
 		return state;
 	}
 
-	@Override
-	protected MapCodec<? extends DirectionalBlock> codec() {
-		// TODO Auto-generated method stub
-		return null;
 	}
-}

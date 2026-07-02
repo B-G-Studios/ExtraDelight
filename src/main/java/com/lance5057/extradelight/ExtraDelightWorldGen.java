@@ -13,10 +13,10 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
-import net.minecraftforge.neoforge.registries.DeferredRegister;
+import net.minecraftforge.registries.DeferredRegister;
 
 public class ExtraDelightWorldGen {
-	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(BuiltInRegistries.FEATURE,
+	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(net.minecraftforge.registries.ForgeRegistries.FEATURES,
 			ExtraDelight.MOD_ID);
 
 	public static final ResourceKey<Level> CORNFIELD = ResourceKey.create(Registries.DIMENSION,

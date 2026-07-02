@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 public class CompatTags {
 
 	public static TagKey<Item> neoforgeItemTag(String tag) {
-		return ItemTags.create(new ResourceLocation("c", tag));
+		return ItemTags.create(new ResourceLocation("forge", tag));
 	}
 	public static TagKey<Item> otherModItemTag(String othermod, String tag) {
 		return ItemTags.create(new ResourceLocation(othermod, tag));

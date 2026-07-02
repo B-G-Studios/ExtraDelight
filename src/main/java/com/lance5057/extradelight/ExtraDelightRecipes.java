@@ -26,11 +26,11 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
-import net.minecraftforge.neoforge.registries.DeferredRegister;
+import net.minecraftforge.registries.DeferredRegister;
 
 public class ExtraDelightRecipes {
 	public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister
-			.create(BuiltInRegistries.RECIPE_TYPE, ExtraDelight.MOD_ID);
+			.create(net.minecraftforge.registries.ForgeRegistries.RECIPE_TYPES, ExtraDelight.MOD_ID);
 
 	public static final Supplier<RecipeType<OvenRecipe>> OVEN = RECIPE_TYPES.register("oven",
 			() -> registerRecipeType("oven"));
@@ -85,7 +85,7 @@ public class ExtraDelightRecipes {
 
 	// Serializers
 	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister
-			.create(BuiltInRegistries.RECIPE_SERIALIZER, ExtraDelight.MOD_ID);
+			.create(net.minecraftforge.registries.ForgeRegistries.RECIPE_SERIALIZERS, ExtraDelight.MOD_ID);
 
 	public static final Supplier<RecipeSerializer<?>> OVEN_SERIALIZER = RECIPE_SERIALIZERS.register("oven",
 			OvenRecipe.Serializer::new);

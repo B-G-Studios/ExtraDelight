@@ -1,3 +1,4 @@
+/*
 package com.lance5057.extradelight;
 
 import java.util.function.Supplier;
@@ -34,3 +35,5 @@ public class ExtraDelightComponents {
 					() -> DataComponentType.<DynamicItemComponent>builder().persistent(DynamicItemComponent.CODEC)
 							.networkSynchronized(DynamicItemComponent.STREAM_CODEC).cacheEncoding().build());
 }
+
+*/

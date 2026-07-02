@@ -23,7 +23,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.neoforge.common.NeoForgeMod;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
@@ -37,13 +36,11 @@ public class ExtraDelight {
 	public static Logger logger = LogManager.getLogger();
 
 	public ExtraDelight(IEventBus modEventBus, ModContainer modContainer) {
-		NeoForgeMod.enableMilkFluid();
 		modContainer.registerConfig(ModConfig.Type.COMMON, ExtraDelightConfig.spec);
 
 //		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setupClient);
 		modEventBus.addListener(this::setupCommon);
-		modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
 		modEventBus.addListener(NetworkHandler::setupPackets);
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
@@ -54,7 +51,6 @@ public class ExtraDelight {
 		AestheticBlocks.BLOCKS.register(modEventBus);
 		AestheticBlocks.ITEMS.register(modEventBus);
 
-		ExtraDelightComponents.COMPONENTS.register(modEventBus);
 		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightFluids.register(modEventBus);
 

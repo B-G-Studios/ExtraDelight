@@ -12,19 +12,19 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.bus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.EventBusSubscriber;
-import net.minecraftforge.neoforge.common.BasicItemListing;
-import net.minecraftforge.neoforge.common.NeoForgeMod;
-import net.minecraftforge.neoforge.event.entity.EntityEvent;
-import net.minecraftforge.neoforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.neoforge.event.entity.living.LivingIncomingDamageEvent;
-import net.minecraftforge.neoforge.event.village.VillagerTradesEvent;
-import net.minecraftforge.neoforge.event.village.WandererTradesEvent;
+import net.minecraftforge.common.BasicItemListing;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.event.entity.EntityEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.entity.living.LivingIncomingDamageEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
 
 @EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class ExtraDelightNeoforgeEvents {
 	@SubscribeEvent
 	public static void picklePoison(LivingIncomingDamageEvent event) {
-		if (event.getSource().is(NeoForgeMod.POISON_DAMAGE)) {
+		if (event.getSource().is(net.minecraft.world.damagesource.DamageTypes.MAGIC)) {
 			LivingEntity le = event.getEntity();
 			if (le.hasEffect(ExtraDelightMobEffects.PICKLED)) {
 				float amp = le.getEffect(ExtraDelightMobEffects.PICKLED).getAmplifier();

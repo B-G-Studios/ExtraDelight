@@ -8,13 +8,12 @@ import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.bus.api.IEventBus;
-import net.minecraftforge.neoforge.fluids.FluidType;
-import net.minecraftforge.neoforge.registries.DeferredRegister;
-import net.minecraftforge.neoforge.registries.NeoForgeRegistries;
+import net.minecraftforge.fluids.FluidType;
+import net.minecraftforge.registries.DeferredRegister;
 
 public class ExtraDelightFluids {
 	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister
-			.create(NeoForgeRegistries.Keys.FLUID_TYPES, ExtraDelight.MOD_ID);
+			.create(net.minecraftforge.registries.ForgeRegistries.Keys.FLUID_TYPES, ExtraDelight.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID,
 			ExtraDelight.MOD_ID);
 

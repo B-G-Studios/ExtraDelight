@@ -5,11 +5,11 @@ import java.util.function.Supplier;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;
-import net.minecraftforge.neoforge.registries.DeferredRegister;
+import net.minecraftforge.registries.DeferredRegister;
 
 public class ExtraDelightParticles {
 	public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister
-			.create(Registries.PARTICLE_TYPE, ExtraDelight.MOD_ID);
+			.create(net.minecraftforge.registries.ForgeRegistries.PARTICLE_TYPES, ExtraDelight.MOD_ID);
 
 	public static final Supplier<SimpleParticleType> CITRUS_PETALS = PARTICLE_TYPES.register("citrus_petals",
 			() -> new SimpleParticleType(true));

@@ -32,53 +32,53 @@ import com.llamalad7.mixinextras.lib.apache.commons.ArrayUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.neoforge.event.BlockEntityTypeAddBlocksEvent;
-import net.minecraftforge.neoforge.registries.DeferredHolder;
-import net.minecraftforge.neoforge.registries.DeferredRegister;
+import /* net.minecraftforge.event.BlockEntityTypeAddBlocksEvent */;
+import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 public class ExtraDelightBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister
-			.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, ExtraDelight.MOD_ID);
+			.create(net.minecraftforge.registries.ForgeRegistries.BLOCK_ENTITY_TYPES, ExtraDelight.MOD_ID);
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<OvenBlockEntity>> OVEN = TILES.register(
+	public static final RegistryObject<BlockEntityType<OvenBlockEntity>> OVEN = TILES.register(
 			"oven", () -> BlockEntityType.Builder.of(OvenBlockEntity::new, ExtraDelightBlocks.OVEN.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FoodDisplayEntity>> FOOD_DISPLAY = TILES
+	public static final RegistryObject<BlockEntityType<FoodDisplayEntity>> FOOD_DISPLAY = TILES
 			.register("food_display", () -> BlockEntityType.Builder
 					.of(FoodDisplayEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.FOOD_DISPLAY))
 					.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KnifeBlockEntity>> KNIFE_BLOCK = TILES
+	public static final RegistryObject<BlockEntityType<KnifeBlockEntity>> KNIFE_BLOCK = TILES
 			.register("knife_block", () -> BlockEntityType.Builder
 					.of(KnifeBlockEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.KNIFE_BLOCKS))
 					.build(null));
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SpiceRackEntity>> SPICE_RACK = TILES
+	public static final RegistryObject<BlockEntityType<SpiceRackEntity>> SPICE_RACK = TILES
 			.register("spice_rack", () -> BlockEntityType.Builder
 					.of(SpiceRackEntity::new,
 							ArrayUtils.addAll(AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS),
 									AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS_FULL)))
 					.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WreathEntity>> WREATH = TILES.register(
+	public static final RegistryObject<BlockEntityType<WreathEntity>> WREATH = TILES.register(
 			"wreath",
 			() -> BlockEntityType.Builder
 					.of(WreathEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS))
 					.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SinkCabinetBlockEntity>> SINK_BLOCK = TILES
+	public static final RegistryObject<BlockEntityType<SinkCabinetBlockEntity>> SINK_BLOCK = TILES
 			.register("sink_block", () -> BlockEntityType.Builder
 					.of(SinkCabinetBlockEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SINKS))
 					.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CounterCabinetBlockEntity>> COUNTER_CABINET_BLOCK = TILES
+	public static final RegistryObject<BlockEntityType<CounterCabinetBlockEntity>> COUNTER_CABINET_BLOCK = TILES
 			.register("counter_cabinet_block",
 					() -> BlockEntityType.Builder
 							.of(CounterCabinetBlockEntity::new,
 									AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.COUNTER_CABINETS))
 							.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<PicnicBasketBlockEntity>> PICNIC_BASKET = TILES
+	public static final RegistryObject<BlockEntityType<PicnicBasketBlockEntity>> PICNIC_BASKET = TILES
 			.register("picnic_basket",
 					() -> BlockEntityType.Builder
 							.of(PicnicBasketBlockEntity::new, SummerCitrus.WHITE_PICNIC_BASKET.get(),
@@ -92,45 +92,45 @@ public class ExtraDelightBlockEntities {
 									SummerCitrus.BLACK_PICNIC_BASKET.get(), SummerCitrus.PURPLE_PICNIC_BASKET.get())
 							.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MortarBlockEntity>> MORTAR = TILES
+	public static final RegistryObject<BlockEntityType<MortarBlockEntity>> MORTAR = TILES
 			.register("mortar", () -> BlockEntityType.Builder
 					.of(MortarBlockEntity::new, ExtraDelightBlocks.MORTAR_STONE.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MixingBowlBlockEntity>> MIXING_BOWL = TILES
+	public static final RegistryObject<BlockEntityType<MixingBowlBlockEntity>> MIXING_BOWL = TILES
 			.register("mixing_bowl", () -> BlockEntityType.Builder
 					.of(MixingBowlBlockEntity::new, ExtraDelightBlocks.MIXING_BOWL.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DryingRackBlockEntity>> DRYING_RACK = TILES
+	public static final RegistryObject<BlockEntityType<DryingRackBlockEntity>> DRYING_RACK = TILES
 			.register("drying_rack", () -> BlockEntityType.Builder
 					.of(DryingRackBlockEntity::new, ExtraDelightBlocks.DRYING_RACK.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CornHuskDollBlockEntity>> CORN_HUSK_DOLL = TILES
+	public static final RegistryObject<BlockEntityType<CornHuskDollBlockEntity>> CORN_HUSK_DOLL = TILES
 			.register("corn_husk_doll", () -> BlockEntityType.Builder
 					.of(CornHuskDollBlockEntity::new, AestheticBlocks.CORN_HUSK_DOLL.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CandyBowlEntity>> CANDY_BOWL = TILES
+	public static final RegistryObject<BlockEntityType<CandyBowlEntity>> CANDY_BOWL = TILES
 			.register("candy_bowl", () -> BlockEntityType.Builder
 					.of(CandyBowlEntity::new, ExtraDelightBlocks.CANDY_BOWL.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TapBlockEntity>> TAP = TILES.register("tap",
+	public static final RegistryObject<BlockEntityType<TapBlockEntity>> TAP = TILES.register("tap",
 			() -> BlockEntityType.Builder.of(TapBlockEntity::new, ExtraDelightBlocks.TAP.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KegBlockEntity>> KEG = TILES.register("keg",
+	public static final RegistryObject<BlockEntityType<KegBlockEntity>> KEG = TILES.register("keg",
 			() -> BlockEntityType.Builder.of(KegBlockEntity::new, ExtraDelightBlocks.KEG.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MeltingPotBlockEntity>> MELTING_POT = TILES
+	public static final RegistryObject<BlockEntityType<MeltingPotBlockEntity>> MELTING_POT = TILES
 			.register("melting_pot", () -> BlockEntityType.Builder
 					.of(MeltingPotBlockEntity::new, ExtraDelightBlocks.MELTING_POT.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ChillerBlockEntity>> CHILLER = TILES
+	public static final RegistryObject<BlockEntityType<ChillerBlockEntity>> CHILLER = TILES
 			.register("chiller", () -> BlockEntityType.Builder
 					.of(ChillerBlockEntity::new, ExtraDelightBlocks.CHILLER.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FunnelBlockEntity>> FUNNEL = TILES.register(
+	public static final RegistryObject<BlockEntityType<FunnelBlockEntity>> FUNNEL = TILES.register(
 			"funnel",
 			() -> BlockEntityType.Builder.of(FunnelBlockEntity::new, ExtraDelightBlocks.FUNNEL.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ChocolateBoxBlockEntity>> CHOCOLATE_BOX = TILES
+	public static final RegistryObject<BlockEntityType<ChocolateBoxBlockEntity>> CHOCOLATE_BOX = TILES
 			.register("chocolate_box", () -> BlockEntityType.Builder.of(ChocolateBoxBlockEntity::new,
 					ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(),
 					ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(),
@@ -142,32 +142,32 @@ public class ExtraDelightBlockEntities {
 					ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get())
 					.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarBlockEntity>> JAR = TILES.register("jar",
+	public static final RegistryObject<BlockEntityType<JarBlockEntity>> JAR = TILES.register("jar",
 			() -> BlockEntityType.Builder.of(JarBlockEntity::new, ExtraDelightBlocks.JAR.get()).build(null));
 
-	public static void addCabinets(BlockEntityTypeAddBlocksEvent event) {
+	/* public static void addCabinets(BlockEntityTypeAddBlocksEvent event) {
 		event.modify(ModBlockEntityTypes.CABINET.get(), ExtraDelightBlocks.CINNAMON_CABINET.get(),
 				ExtraDelightBlocks.FRUIT_CABINET.get());
 		event.modify(ModBlockEntityTypes.CABINET.get(),
 				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS));
-	};
+	}; */
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VatBlockEntity>> VAT = TILES.register("vat",
+	public static final RegistryObject<BlockEntityType<VatBlockEntity>> VAT = TILES.register("vat",
 			() -> BlockEntityType.Builder.of(VatBlockEntity::new, ExtraDelightBlocks.VAT.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EvaporatorBlockEntity>> EVAPORATOR = TILES
+	public static final RegistryObject<BlockEntityType<EvaporatorBlockEntity>> EVAPORATOR = TILES
 			.register("evaporator", () -> BlockEntityType.Builder
 					.of(EvaporatorBlockEntity::new, ExtraDelightBlocks.EVAPORATOR.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarDisplayBlockEntity>> JAR_DISPLAY = TILES
+	public static final RegistryObject<BlockEntityType<JarDisplayBlockEntity>> JAR_DISPLAY = TILES
 			.register("jar_display", () -> BlockEntityType.Builder
 					.of(JarDisplayBlockEntity::new, Fermentation.JAR_DISPLAY_BLOCK.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JuicerBlockEntity>> JUICER = TILES.register(
+	public static final RegistryObject<BlockEntityType<JuicerBlockEntity>> JUICER = TILES.register(
 			"juicer",
 			() -> BlockEntityType.Builder.of(JuicerBlockEntity::new, ExtraDelightBlocks.JUICER.get()).build(null));
 	
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FruitBowlBlockEntity>> FRUIT_BOWL = TILES.register(
+	public static final RegistryObject<BlockEntityType<FruitBowlBlockEntity>> FRUIT_BOWL = TILES.register(
 			"fruit_bowl",
 			() -> BlockEntityType.Builder.of(FruitBowlBlockEntity::new, ExtraDelightBlocks.FRUIT_BOWL.get()).build(null));
 }

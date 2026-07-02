@@ -1,25 +1,24 @@
 package com.lance5057.extradelight;
-
-import net.minecraftforge.neoforge.common.ModConfigSpec;
+import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ExtraDelightConfig {
-	public static ModConfigSpec spec;
+	public static ForgeConfigSpec spec;
 
 	public static final String DEBUG = "debug";
-	public static ModConfigSpec.BooleanValue ENABLE_DEBUG_MODE;
+	public static ForgeConfigSpec.BooleanValue ENABLE_DEBUG_MODE;
 	
 	public static final String CATEGORY_RECIPE_BOOK = "recipe_book";
-	public static ModConfigSpec.BooleanValue ENABLE_RECIPE_BOOK_OVEN;
+	public static ForgeConfigSpec.BooleanValue ENABLE_RECIPE_BOOK_OVEN;
 
 	public static final String CATEGORY_MINT_SPREAD = "mint_spread";
-	public static ModConfigSpec.BooleanValue MINT_SPREAD;
-	public static ModConfigSpec.IntValue MINT_SPREAD_RATE;
+	public static ForgeConfigSpec.BooleanValue MINT_SPREAD;
+	public static ForgeConfigSpec.IntValue MINT_SPREAD_RATE;
 	
 	public static final String CATEGORY_SPOOKY = "spooky";
-	public static ModConfigSpec.BooleanValue ALL_YEAR;
+	public static ForgeConfigSpec.BooleanValue ALL_YEAR;
 
 	static {
-		ModConfigSpec.Builder Builder = new ModConfigSpec.Builder();
+		ForgeConfigSpec.Builder Builder = new ForgeConfigSpec.Builder();
 
 		Builder.comment("Debug Mode").push(DEBUG);
 		ENABLE_DEBUG_MODE = Builder.comment("Enable Debug Mode for Developement")

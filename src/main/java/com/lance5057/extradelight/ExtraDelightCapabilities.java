@@ -1,3 +1,4 @@
+/*
 package com.lance5057.extradelight;
 
 import net.minecraft.core.Direction;
@@ -109,3 +110,5 @@ public class ExtraDelightCapabilities {
 //				ExtraDelightItems.DYNAMIC_TEST2.get());
 	}
 }
+
+*/

@@ -66,14 +66,14 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.bus.api.EventPriority;
 import net.minecraftforge.bus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.EventBusSubscriber;
-import net.minecraftforge.neoforge.client.event.ModelEvent;
-import net.minecraftforge.neoforge.client.event.ModelEvent.RegisterAdditional;
-import net.minecraftforge.neoforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.neoforge.client.event.RegisterMenuScreensEvent;
-import net.minecraftforge.neoforge.client.event.RegisterParticleProvidersEvent;
-import net.minecraftforge.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
-import net.minecraftforge.neoforge.client.extensions.common.IClientItemExtensions;
-import net.minecraftforge.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.minecraftforge.client.event.ModelEvent;
+import net.minecraftforge.client.event.ModelEvent.RegisterAdditional;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterMenuScreensEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
+import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import net.minecraftforge.client.extensions.common.RegisterClientExtensionsEvent;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
@@ -226,6 +226,7 @@ public class ExtraDelightClientEvents {
 		event.register(itemBlockColourHandler, AestheticBlocks.getRegistryListAsItems(AestheticBlocks.WREATH_ITEMS));
 	}
 
+/*
 	@SubscribeEvent
 	public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
 
@@ -235,7 +236,8 @@ public class ExtraDelightClientEvents {
 			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 				return JarItemModel.getInstance();
 			}
-		}, ExtraDelightItems.JAR.asItem());
+		}
+*/, ExtraDelightItems.JAR.asItem());
 
 	}
 

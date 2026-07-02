@@ -20,8 +20,8 @@ import com.lance5057.extradelight.workstations.vat.VatMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.bus.api.IEventBus;
-import net.minecraftforge.neoforge.common.extensions.IMenuTypeExtension;
-import net.minecraftforge.neoforge.registries.DeferredRegister;
+import net.minecraftforge.common.extensions.IMenuTypeExtension;
+import net.minecraftforge.registries.DeferredRegister;
 
 public class ExtraDelightContainers {
 
@@ -29,38 +29,38 @@ public class ExtraDelightContainers {
 			ExtraDelight.MOD_ID);
 
 	public static final Supplier<MenuType<OvenMenu>> OVEN_MENU = MENU_TYPES.register("oven",
-			() -> IMenuTypeExtension.create(OvenMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(OvenMenu::new));
 	public static final Supplier<MenuType<MixingBowlMenu>> MIXING_BOWL_MENU = MENU_TYPES.register("mixing_bowl",
-			() -> IMenuTypeExtension.create(MixingBowlMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(MixingBowlMenu::new));
 
 	public static final Supplier<MenuType<FoodDisplayMenu>> FOOD_DISPLAY_MENU = MENU_TYPES.register("food_display",
-			() -> IMenuTypeExtension.create(FoodDisplayMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(FoodDisplayMenu::new));
 	public static final Supplier<MenuType<KnifeBlockMenu>> KNIFE_BLOCK_MENU = MENU_TYPES.register("knife_block",
-			() -> IMenuTypeExtension.create(KnifeBlockMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(KnifeBlockMenu::new));
 	public static final Supplier<MenuType<SpiceRackMenu>> SPICE_RACK_MENU = MENU_TYPES.register("spice_rack",
-			() -> IMenuTypeExtension.create(SpiceRackMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(SpiceRackMenu::new));
 
 	public static final Supplier<MenuType<DoughShapingMenu>> DOUGH_SHAPING_MENU = MENU_TYPES.register("dough_shaping",
-			() -> IMenuTypeExtension.create(DoughShapingMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(DoughShapingMenu::new));
 	public static final Supplier<MenuType<WreathMenu>> WREATH_MENU = MENU_TYPES.register("wreath",
-			() -> IMenuTypeExtension.create(WreathMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(WreathMenu::new));
 	public static final Supplier<MenuType<SinkCabinetMenu>> SINK_MENU = MENU_TYPES.register("sink",
-			() -> IMenuTypeExtension.create(SinkCabinetMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(SinkCabinetMenu::new));
 	public static final Supplier<MenuType<CounterCabinetMenu>> COUNTER_CABINET_MENU = MENU_TYPES
-			.register("counter_cabinet", () -> IMenuTypeExtension.create(CounterCabinetMenu::new));
+			.register("counter_cabinet", () -> net.minecraftforge.common.extensions.IForgeMenuType.create(CounterCabinetMenu::new));
 	public static final Supplier<MenuType<StyleableMenu>> STYLE_MENU = MENU_TYPES.register("style",
-			() -> IMenuTypeExtension.create(StyleableMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(StyleableMenu::new));
 
 	public static final Supplier<MenuType<MeltingPotMenu>> MELTING_POT_MENU = MENU_TYPES.register("melting_pot",
-			() -> IMenuTypeExtension.create(MeltingPotMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(MeltingPotMenu::new));
 	public static final Supplier<MenuType<ChillerMenu>> CHILLER_MENU = MENU_TYPES.register("chiller",
-			() -> IMenuTypeExtension.create(ChillerMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(ChillerMenu::new));
 
 	public static final Supplier<MenuType<VatMenu>> VAT_MENU = MENU_TYPES.register("vat",
-			() -> IMenuTypeExtension.create(VatMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(VatMenu::new));
 
 	public static final Supplier<MenuType<PicnicBasketMenu>> PICNIC_BASKET_MENU = MENU_TYPES.register("picnic_basket",
-			() -> IMenuTypeExtension.create(PicnicBasketMenu::new));
+			() -> net.minecraftforge.common.extensions.IForgeMenuType.create(PicnicBasketMenu::new));
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);
